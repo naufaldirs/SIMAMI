@@ -1,21 +1,137 @@
- .form-signin .form-floating:focus-within {
-    z-index: 2;
-  }
-  
-  .form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-  
-  .form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-  
-  .form-registration input {
-    border-radius: 0;
-    margin-bottom: -1px;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+	font-family: 'Poppins';
+}
+.f400{
+	font-family: 'Poppins';
+	font-size: 15;
+	font-weight: 400;
+}
+.f700{
+	font-family: 'Poppins';
+	font-weight: 700;
+}
+.f300{
+	font-family: 'Poppins';
+	font-weight: 300;
+	font-size: medium;
+}
 
+/*navbar*/
+.bg{
+	background-color: #55acee;
+}
+.navbg{
+    background-color: #F5F5F5;
+}
+.fk{
+	color: white;
+}
+.fk:hover{
+	color: white;
+	text-shadow: 0 0 3px #FAF6F5;
+}
+
+/* home */
+.cardhome{
+	border-radius: 5px;
+	border-color: whitesmoke;
+}
+.butpres{
+	background-color: #55ACEE;
+	color: white;
+	border-radius: 30px;
+	width: 1000px;
+	height: 50px;
+	font-size: x-large;
+}
+.butpres:hover{
+	background-color: #55ACEE;
+	color: white;
+	border-radius: 30px;
+	width: 1000px;
+	height: 50px;
+	font-size: x-large;
+	text-shadow: 0 0 3px #FAF6F5;;
+}
+.butgel{
+	background-color: #55ACEE;
+	color: white;
+	border-radius: 30px;
+	width: 450px;
+	height: 50px;
+	font-size: large;
+}
+.butgel:hover{
+	background-color: #55ACEE;
+	color: white;
+	border-radius: 30px;
+	width: 450px;
+	height: 50px;
+	font-size: large;
+	text-shadow: 0 0 3px #FAF6F5;
+}
+
+/*projur*/
+.profil{
+	background-color: #55ACEE;
+	color: white;
+}
+.profil:hover{
+	background-color: #55ACEE;
+	color: white;
+	text-shadow: 0 0 3px #FAF6F5;
+}
+.projur{
+	color:#0E2970;
+}
+
+/*masukdll*/
+.fc{
+	color: #2B4E84;
+	;
+}
+.fl{
+	color: white;
+}
+.login{
+	background-image: url(../img/login.png);
+	background-position: right;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.sign{
+	background-color: #E1E1E1;
+	border-radius: 5%;
+}
+.daftar{
+	background-color: #55ACEE;
+	color: white;
+	border-radius:25%;
+}
+.masuk{
+	background-color: white;
+	color: #55ACEE;
+	border-radius: 25%;
+}
+/*jalur*/
+.kanan{
+	float: right;
+}
+
+/*pendaftaran*/
+.bintang{
+	color: red;
+}
+
+/*footer*/
+.ft{
+    background-color: #55acee;
+    border-radius: 3%;
+}
+.colfot{
+    color: white;
+}
+.cpy{
+    text-decoration: none;
+}

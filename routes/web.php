@@ -1,12 +1,15 @@
 <?php
 
 use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\JalurController;
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\RegisterController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -27,31 +30,42 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/about', function () {
-    return view('about' , [
-        "title" => "About",
-        "active" => "about",
-        "name" => "Naufaldi Ramadhan",
-        "email" => "naufaldiramadhan@gmail.com",
-        "image" => "1.jpg"
-    ]);
-});
-Route::get('/siio', function () {
-    return view('siio' , [
-        "title" => "Profil Program Studi D-IV Sistem Informasi Industri Otomotif",
-        "active" => "siio",
-        "akreditasi" => "B"
-    ]);
-});
-Route::get('/abo', function () {
-    return view('abo' , [
-        "title" => "D-IV Administrasi Bisnis Otomotif ",
-        "active" => "abo",
-        "akreditasi" => "B"
-    ]);
-});
+Route::get('/projur', function () {
+    return view('projur' , [
+        "title" => "Program Studi"
 
-
+    ]);
+});
+Route::get('/d4-administrasi-bisnis-otomotif', function () {
+    return view('jurusan.abo' , [
+        'title' => "D-IV Administrasi Bisnis Otomotif",
+    ]);
+});
+Route::get('/d4-sistem-informasi-industri-otomotif', function () {
+    return view('jurusan.siio' , [
+        'title' => "D-IV Administrasi Bisnis Otomotif",
+    ]);
+});
+Route::get('/d4-teknik-industri-otomotif', function () {
+    return view('jurusan.tio' , [
+        'title' => "D-IV Teknik Industri Otomotif",
+    ]);
+});
+Route::get('/d4-teknik-kimia-polimer', function () {
+    return view('jurusan.tkp' , [
+        'title' => "D-IV Teknik Kimia Polimer",
+    ]);
+});
+Route::get('/d4-teknologi-rekayasa-otomotif', function () {
+    return view('jurusan.tro' , [
+        'title' => "D-IV Teknik Rekayasa Otomotif",
+    ]);
+});
+Route::get('/profil-kampus', function () {
+    return view('jurusan.kampus' , [
+        'title' => "Profil Kampus",
+    ]);
+});
 Route::get('/posts', [PostController::class, 'index']);
 
 // halaman single post
@@ -90,11 +104,15 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/dashboard', function(){
-    return view('dashboard.index');
-})->middleware('auth');
+Route::get('/dashboard', function(){return view('dashboard.index');})->middleware('auth');
 
-Route::get('dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
+Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
-
+Route::get('/dashboard/biodata/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/biodata', BiodataController::class)->middleware('auth');
+Route::get('/pendaftaran', [BiodataController::class, 'create'])->middleware('auth');
+Route::get('/jalur-mandiri', function () {
+    return view('dashboard.jalur.gel');
+})->middleware('auth');
+Route::resource('/jalur-prestasi', JalurController::class)->middleware('auth');
 Route::resource('dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');

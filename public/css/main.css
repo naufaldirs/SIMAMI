@@ -13,8 +13,7 @@
 	border-radius: 100%;
 }
 .bg{
-	background-image: url();
-	background-size: auto;
+	background-color: #55acee;
 }
 .tmbl{
     background: linear-gradient(90deg, rgb(78, 93, 190) 0%, rgb(155, 100, 228) 70%, rgb(175, 128, 238) 100%);
@@ -146,4 +145,11 @@
 }
 .float{
 	float: right;
+}
+.fk{
+	color: white;
+}
+.fk:hover{
+	color: white;
+	text-shadow: 0 0 3px #FAF6F5;
 }

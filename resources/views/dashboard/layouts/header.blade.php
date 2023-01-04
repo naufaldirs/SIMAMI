@@ -1,15 +1,28 @@
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">SIMAMI</a>
-    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
-    <div class="navbar-nav">
-      <div class="nav-item text-nowrap">
-        <form action="/logout" method="post">
-          @csrf
-            <button type="submit" class="nav-link px-4 bg-dark border-0"> <span data-feather="log-out"></span>Logout</button>
-        </form>
+<nav class="navbar navbar-expand-lg navbar-info bg-info" style="">
+    <div class="container">   
+      <a class="navbar-brand" alt="logo" href="/dashboard"><img src="img/logo.png" height="50"></a>
+    <ul class="navbar-nav ms-auto">
+      @auth
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Welcome Back, {{ auth()->user()->namadepan }}
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-sidebar-inset-reverse"></i>Beranda</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li>
+            <form action="/logout" method="post">
+              @csrf
+                <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i>Logout</button>
+            </form>
+          </li>
+        
+
+        </ul>
+      </li>       
+      @endauth
+    </ul>
+    
       </div>
     </div>
-  </header>
+  </nav>
