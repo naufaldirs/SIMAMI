@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PendaftaranRequest;
 use App\Models\Biodata;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Illuminate\Http\Request;
-
 class BiodataController extends Controller
 {
     /**
@@ -13,10 +12,12 @@ class BiodataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Biodata $biodata)
     {
-        $mahasiswas = Biodata::all();
-        return view('dashboard.biodata.index');
+        return view('dashboard.biodata.index', [
+            'biodatas' => Biodata::where('user_id', auth()->user()->id)->get(),
+            'biodata'=> $biodata
+        ]);
     }
 
     /**
@@ -35,35 +36,44 @@ class BiodataController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PendaftaranRequest $request)
+    public function store(Request $request)
     {
-        $pendaftaran = new Biodata();
-        $pendaftaran->nik = $request->nik;
-        $pendaftaran->nisn = $request->nisn;
-        // $pendaftaran->name = $request->name;
-        // $pendaftaran->npwp = $request->npwp;
-        // $pendaftaran->gender = $request->gender;
-        // $pendaftaran->tempatlahir = $request->tempatlahir;
-        // $pendaftaran->tanggallahir = $request->tanggallahir;
-        // $pendaftaran->ibu = $request->ibu; 
-        // $pendaftaran->ayah = $request->ayah; 
-        // $pendaftaran->goldar = $request->goldar; 
-        // $pendaftaran->alamat = $request->alamat; 
-        // $pendaftaran->kelurahan = $request->kelurahan; 
-        // $pendaftaran->kecamatan = $request->kecamatan; 
-        // $pendaftaran->kota = $request->kota; 
-        // $pendaftaran->phone = $request->phone; 
-        // $pendaftaran->email = $request->email; 
-        // $pendaftaran->nama_sekolah = $request->nama_sekolah; 
-        // $pendaftaran->nilai_raport = $request->nilai_raport;
-        // $pendaftaran->alamat_sekolah = $request->alamat_sekolah; 
-        // $pendaftaran->kota_sekolah = $request->kota_sekolah; 
-        // $pendaftaran->alamat_sekolah = $request->alamat_sekolah; 
-        // $pendaftaran->tahunlulus = $request->tahunlulus; 
-        // $pendaftaran->jurusan1 = $request->jurusan1; 
-        // $pendaftaran->jurusan2 = $request->jurusan2; 
-        $pendaftaran->save();
-        return redirect('/biodata');
+        $validatedData = $request->validate([
+            'nik' => 'required',
+            'nisn' => 'required',
+            'nama' => 'required',
+            'npwp' => 'min:1',
+            'gender' => 'required',
+            'tempatlahir' => 'required',
+            'tanggallahir' => 'required|date',
+            'goldar' => 'required',
+            'ibu' => 'required',
+            'ayah' => 'required',
+            'image' => 'image|file|max:1024',
+            'alamat' => 'required',
+            'kelurahan' => 'required',
+            'kecamatan' => 'required',
+            'kota' => 'required',
+            'provinsi' => 'required',
+            'kodepos' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'pendidikan' => 'required',
+            'nama_sekolah' => 'required',
+            'alamat_sekolah' => 'required',
+            'kota_sekolah' => 'required',
+            'jurusan_sekolah' => 'required',
+            'nilai_raport' => 'required',
+            'tahunlulus'=> 'required',
+            'jurusan1' => 'required',
+            'jurusan2' => 'required'
+           ]);
+           if($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('Files');
+           }    
+           $validatedData['user_id'] = auth()->user()->id;
+        Biodata::create($validatedData);
+        return redirect('/resume');
     }
 
     /**
@@ -72,9 +82,11 @@ class BiodataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return view('dashboard.biodata.show' , [
+            'biodatas' => Biodata::where('user_id', auth()->user()->id)->get()
+        ]);
     }
 
     /**
@@ -109,5 +121,19 @@ class BiodataController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function kartuujian()
+    {
+        return view('dashboard.biodata.kartu' , [
+            'biodatas' => Biodata::where('user_id', auth()->user()->id)->get()
+        ]);
+    }
+    public function cetak()
+    {
+        $biodata = Biodata::where('user_id', auth()->user()->id)->get();
+        $pdf = FacadePdf::loadview('dashboard.biodata.cetak', ['biodatas' => $biodata])->setPaper('A3');
+        return $pdf->download('Kartu_Ujian.pdf');
+
+
     }
 }

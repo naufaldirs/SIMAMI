@@ -7,144 +7,22 @@
 	font-size: 15;
 	font-weight: 400;
 }
-.pp{
-	width: 150px;
-	height: 150px;
-	border-radius: 100%;
-}
-.bg{
-	background-color: #55acee;
-}
-.tmbl{
-    background: linear-gradient(90deg, rgb(78, 93, 190) 0%, rgb(155, 100, 228) 70%, rgb(175, 128, 238) 100%);
-    color: white;
-    border-radius: 5px;
-}
-.tmbl:hover{
-	background: transparent;
-    color:rgb(155, 100, 228);
-	border-radius: 5px;
-	border-color: rgb(155, 100, 228);
-}
-.bdr{
-	border-color: rgb(155, 100, 228);
-}
-.tmbl-2{
-    background: transparent;
-    color:rgb(155, 100, 228);
-	border-radius: 5px;
-	border-color: rgb(155, 100, 228);
-}
-.tmbl-2:hover{
-    background:  linear-gradient(90deg, rgb(78, 93, 190) 0%, rgb(155, 100, 228) 70%, rgb(175, 128, 238) 100%);
-    color: white;
-	border-radius: 5px;
-}
 .f700{
 	font-family: 'Poppins';
 	font-weight: 700;
-}
-.byngan{
-	border-radius: 5px;
-	border-color: whitesmoke;
-    box-shadow: 15px 15px 15px rgba(81, 81, 87, 0.11)
 }
 .f300{
 	font-family: 'Poppins';
 	font-weight: 300;
 	font-size: medium;
 }
-.f7{
-	font-family: 'Poppins';
-	font-weight: 700;
-	font-size: x-large;
+
+/*navbar*/
+.bg{
+	background-color: #55acee;
 }
-.bg2{
-		background-image: url(../img/bg.png);
-		background-size: auto;
-		background-color: skyblue;
-}
-.latar{
-	background-color:#ddf2fa;
-	background-image: url(../img/bg.png);
-    opacity: 0.9;
-    height: 750px;
-}
-.box{
-	box-sizing: border-box;
-}
-.ck{
-	background-image: url(../../../PTS/GOTECH/homepage_FINISH/1.png);
-}
-.tptb{
-	background-color:transparent;
-	color: #00B0FF;
-}
-.form{
-	font-weight: bold;
-	font-size: 14px;
-	border-radius: 5px;
-	box-shadow: 0px 8px 25px 3px rgba(0, 0, 0, 0.1);
-	background-color: white;
-	padding: 50px;
-	width: 100%;
-}
-.first{
-	padding-left: 0px;
-	font-size: 13px;
-	border-top: none;
-	border-right: none;
-	border-left: none;
-	border-radius: 0px;
-	border-bottom-width: solid 1px grey;
-}
-.first :focus{
-	outline: none;
-    box-shadow: none;
-}
-.ikon{
-	color: rgb(155, 100, 228);
-	width: 15;
-	background-image: url(../img/email.svg);
-}
-.foot{
-	background-image: url(../img/bg.png);
-    height: 150px;
-}
-.bot{
-		background-color:#ddf2fa;
-		opacity: 0.9;
-		height: 750px;
-}
-.tptb2{
-	background-color:transparent;
-	color: black;
-	border-radius: 5;
-}
-.tptb2:hover{
-	background-color:transparent;
-	color:black;
-	border-radius: 5;
-	border-color: #49BE55;
-}
-.niga{
-	background: linear-gradient(90deg, rgb(60, 123, 218) 0%, rgb(58, 76, 233) 70%, rgb(9, 61, 204) 100%);
-    color: white;
-    border-radius: 5px;
-}
-.niga:hover{
-	background: transparent;
-    color:rgb(35, 24, 201);
-	border-radius: 5px;
-	border-color: rgb(45, 33, 204);
-}
-.nb{
-	background-image: url(../img/kelapa.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-.float{
-	float: right;
+.navbg{
+    background-color: #F5F5F5;
 }
 .fk{
 	color: white;
@@ -152,4 +30,118 @@
 .fk:hover{
 	color: white;
 	text-shadow: 0 0 3px #FAF6F5;
+}
+
+/* home */
+.cardhome{
+	border-radius: 5px;
+	border-color: whitesmoke;
+}
+.butpres{
+	background-color: #55ACEE;
+	color: white;
+	border-radius: 30px;
+	width: 1000px;
+	height: 50px;
+	font-size: x-large;
+}
+.butpres:hover{
+	background-color: #55ACEE;
+	color: white;
+	border-radius: 30px;
+	width: 1000px;
+	height: 50px;
+	font-size: x-large;
+	text-shadow: 0 0 3px #FAF6F5;;
+}
+.butgel{
+	background-color: #55ACEE;
+	color: white;
+	border-radius: 30px;
+	width: 450px;
+	height: 50px;
+	font-size: large;
+}
+.butgel:hover{
+	background-color: #55ACEE;
+	color: white;
+	border-radius: 30px;
+	width: 450px;
+	height: 50px;
+	font-size: large;
+	text-shadow: 0 0 3px #FAF6F5;
+}
+
+/*projur*/
+.profil{
+	background-color: #55ACEE;
+	color: white;
+}
+.profil:hover{
+	background-color: #55ACEE;
+	color: white;
+	text-shadow: 0 0 3px #FAF6F5;
+}
+.projur{
+	color:#0E2970;
+}
+
+/*masukdll*/
+.fc{
+	color: #2B4E84;
+	;
+}
+.fl{
+	color: white;
+}
+.login{
+	background-image: url(../img/login.png);
+	background-position: right;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.sign{
+	background-color: #E1E1E1;
+	border-radius: 5%;
+}
+.daftar{
+	background-color: #55ACEE;
+	color: white;
+	border-radius:25%;
+}
+.masuk{
+	background-color: white;
+	color: #55ACEE;
+	border-radius: 25%;
+}
+/*jalur*/
+.kanan{
+	float: right;
+}
+
+/*pendaftaran lulus*/
+.bintang{
+	color: red;
+}
+.lulus{
+	color: black;
+}
+.kartu{
+	font-size: small;
+	color: black;
+}
+.tepi{
+	border: 2px solid black;
+}
+
+/*footer*/
+.ft{
+    background-color: #55acee;
+    border-radius: 3%;
+}
+.colfot{
+    color: white;
+}
+.cpy{
+    text-decoration: none;
 }

@@ -13,6 +13,6 @@ class Category extends Model
 
     public function profil()
     {
-        return $this -> hasMany(Prodi:: class);
+        return $this -> hasMany(Post:: class);
     }
 }

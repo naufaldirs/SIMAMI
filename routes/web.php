@@ -4,14 +4,14 @@ use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\JalurController;
+use App\Http\Controllers\LaporanController;
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\RegisterController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Models\Biodata;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,7 +100,11 @@ Route::get('/authors/{author:username}' , function(User $author){
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
-
+Route::get('/lupa-password', function () {
+    return view('login.lupa' , [
+        'title' => "Lupa Password",
+    ]);
+});
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
@@ -111,8 +115,13 @@ Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(
 Route::get('/dashboard/biodata/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/biodata', BiodataController::class)->middleware('auth');
 Route::get('/pendaftaran', [BiodataController::class, 'create'])->middleware('auth');
+Route::post('/pendaftaran/store', [BiodataController::class, 'store'])->middleware('auth');
+Route::get('/resume', [BiodataController::class, 'show'])->middleware('auth');
+Route::get('/kartu_ujian', [BiodataController::class, 'kartuujian'])->middleware('auth');
+Route::get('/kartu_ujian/cetak_pdf', [BiodataController::class, 'cetak'])->middleware('auth');
 Route::get('/jalur-mandiri', function () {
     return view('dashboard.jalur.gel');
 })->middleware('auth');
+Route::get('/daftar-pendaftar', [JalurController::class, 'daftar'])->middleware('auth');
 Route::resource('/jalur-prestasi', JalurController::class)->middleware('auth');
 Route::resource('dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');

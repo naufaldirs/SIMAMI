@@ -25,7 +25,7 @@ class PendaftaranRequest extends FormRequest
         return [
             'nik' => 'required',
             'nisn' => 'required',
-            'name' => 'required',
+            'nama' => 'required',
             'npwp' => 'required',
             'gender' => 'required',
             'tempatlahir' => 'required',
@@ -42,11 +42,10 @@ class PendaftaranRequest extends FormRequest
             'email' => 'required',
             'nama_sekolah' => 'required',
             'nilai_raport' => 'required',
-            'alamat_sekolah' => 'required',
             'kota_sekolah' => 'required',
             'tahunlulus'=> 'required',
             'jurusan1' => 'required',
-            'jurusan2' => 'required',
+            'jurusan2' => 'required'
         ];
     }
 }

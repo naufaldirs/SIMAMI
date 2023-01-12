@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
     
     <title>SIMAMI STMI | {{ $title }}</title>
   </head>
@@ -41,7 +41,7 @@
                         <div class="form-group">
                           <label for="password">Password</label>
                           <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-                          <p class="text-right"><a href="/login/lupa" class="btn fk">Lupa Password?</a></p>
+                          <p class="text-right"><a href="/lupa-password" class="btn fk">Lupa Password?</a></p>
                         </div>
                         <button type="submit" class="btn masuk">Submit</button>
                         <p>Belum Punya Akun?<a href="/register" class="btn fk">Daftar Disini</a></p>
