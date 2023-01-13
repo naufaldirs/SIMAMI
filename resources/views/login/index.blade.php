@@ -18,7 +18,7 @@
       
         <div class="row">
             <div class="col-lg-6 pt-3 text-center">
-                <img src="img/logo.png" height="50">
+               <a href="/"><img src="img/logo.png" height="50"></a>
               <div class="col-lg-6 text-center ml-4 pt-3">
                 <img src="img/orang.png" height="400px">
               </div>
@@ -34,7 +34,7 @@
                           <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" autofocus required value="{{ old('email') }}">                
                           @error('email')
                               <div class="invalid-feedback">
-                                {{ $message }}
+                                {{ "Email Tidak Ditemukan"}}
                               </div>
                           @enderror
                         </div>

@@ -124,4 +124,3 @@ Route::get('/jalur-mandiri', function () {
 })->middleware('auth');
 Route::get('/daftar-pendaftar', [JalurController::class, 'daftar'])->middleware('auth');
 Route::resource('/jalur-prestasi', JalurController::class)->middleware('auth');
-Route::resource('dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');

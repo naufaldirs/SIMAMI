@@ -40,16 +40,16 @@
         <div class="container">
           <h1 class="text-center f400">Jadwal Pendaftaran</h1><br>
             <div class="text-center">
-              <a href="jalur/japres.html"><button type="button" class="btn butpres">STMI Prestasi</button></a>
+              <a href="/jalur-prestasi"><button type="button" class="btn butpres">STMI Prestasi</button></a>
               <p>Pendaftaran	: 25 januari - 10 Maret 2023.</p>
             </div>
             <div class="row">
               <div class="col-lg-6">
-                <a href="jalur/gel.html"><button type="button" class="btn butgel mr-5 ml-5">STMI Mandiri Gelombang 1</button></a>
+                <a href="/jalur-mandiri"><button type="button" class="btn butgel mr-5 ml-5">STMI Mandiri Gelombang 1</button></a>
                 <p class="text-center">Sabtu, 30 Mei 2023 jam 08.00 – 10.00 WIB.</p>
               </div>
               <div class="col-lg-6">  
-                <a href="jalur/gel.html"><button type="button" class="btn butgel mr-5 ml-5">STMI Mandiri Gelombang 2</button></a>
+                <a href="/jalur-mandiri"><button type="button" class="btn butgel mr-5 ml-5">STMI Mandiri Gelombang 2</button></a>
                 <p class="text-center">Kamis, 30 Juni 2023 jam 08.00 – 10.00 WIB.</p>
               </div>
             </div>
