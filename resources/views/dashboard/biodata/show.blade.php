@@ -45,7 +45,7 @@
     <div class="col-sm-10">
      <a type="text" class="form-control" id="asal_sekolah" placeholder="">
         @foreach ($biodatas as $biodata)
-        <td class="col-md-6">{{ $biodata->nama_sekolah }}</td>
+        <td class="col-md-6">{{ $biodata->education->nama_sekolah }}</td>
         @endforeach
      </a>
     </div>
@@ -55,7 +55,7 @@
     <div class="col-sm-10">
      <a type="text" class="form-control" id="jurusan1" placeholder="">
         @foreach ($biodatas as $biodata)
-        <td class="col-md-6">{{ $biodata->jurusan1 }}</td>
+        <td class="col-md-6">{{ $biodata->education->jurusan1 }}</td>
         @endforeach
      </a>
     </div>
@@ -65,7 +65,7 @@
     <div class="col-sm-10">
      <a type="text" class="form-control" id="jurusan2" placeholder="">
         @foreach ($biodatas as $biodata)
-        <td class="col-md-6">{{ $biodata->jurusan2 }}</td>
+        <td class="col-md-6">{{ $biodata->education->jurusan2 }}</td>
         @endforeach
      </a>
     </div>

@@ -3,18 +3,18 @@
     <section>
       <section>
         <div id="carouselExampleSlidesOnly" class="carousel slide container" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                  <img src="img/home1.jpg" class="d-block w-100" alt="Politeknik STMI Jakarta" height="430px" width="200">
-              </div>
-              <div class="carousel-item">
-                <img src="img/home2.jpg" class="d-block w-100" alt="Politeknik STMI Jakarta" height="430px">
-              </div>
-              <div class="carousel-item">
-                <img src="img/home3.jpg" class="d-block w-100" alt="Politeknik STMI Jakarta" height="430px">
-              </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/home1.jpg" class="d-block w-100" alt="Politeknik STMI Jakarta" height="430px" width="200">
             </div>
-        </div>
+            <div class="carousel-item">
+              <img src="img/home2.jpg" class="d-block w-100" alt="Politeknik STMI Jakarta" height="430px">
+            </div>
+            <div class="carousel-item">
+              <img src="img/home3.jpg" class="d-block w-100" alt="Politeknik STMI Jakarta" height="430px">
+            </div>
+          </div>
+      </div>
       </section>
       <br><br><br>
       

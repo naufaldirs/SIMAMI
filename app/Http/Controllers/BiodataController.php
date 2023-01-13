@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Biodata;
+use App\Models\Education;
 use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Illuminate\Http\Request;
 class BiodataController extends Controller
@@ -68,10 +69,23 @@ class BiodataController extends Controller
             'jurusan1' => 'required',
             'jurusan2' => 'required'
            ]);
+           $validatedDataSekolah = $request->validate([
+            'pendidikan' => 'required',
+            'nama_sekolah' => 'required',
+            'alamat_sekolah' => 'required',
+            'kota_sekolah' => 'required',
+            'jurusan_sekolah' => 'required',
+            'nilai_raport' => 'required',
+            'tahunlulus'=> 'required',
+            'jurusan1' => 'required',
+            'jurusan2' => 'required'
+           ]);
            if($request->file('image')) {
             $validatedData['image'] = $request->file('image')->store('Files');
            }    
            $validatedData['user_id'] = auth()->user()->id;
+           $validatedData['education_id'] = auth()->user()->id;
+           Education::create($validatedDataSekolah);
         Biodata::create($validatedData);
         return redirect('/resume');
     }

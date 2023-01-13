@@ -126,36 +126,42 @@
                             <td width="30%">Jenis Sekolah</td>
                             <td width="3%">:</td>
                             @foreach ($biodatas as $biodata)
-                            <td class="col-md-6">{{ $biodata->pendidikan }}</td>
+                            <td class="col-md-6">{{ $biodata->education->pendidikan }}</td>
                             @endforeach
                         </tr>
                         <tr>
                             <td width="30%">Nama Sekolah</td>
                             <td width="3%">:</td>
                             @foreach ($biodatas as $biodata)
-                            <td class="col-md-6">{{ $biodata->nama_sekolah }}</td>
+                            <td class="col-md-6">{{ $biodata->education->nama_sekolah }}</td>
                             @endforeach
                         </tr>
                         <tr>
                             <td width="30%">Alamat Sekolah</td>
                             <td width="3%">:</td>
-                            <td class="col-md-6"></td>
+                            @foreach ($biodatas as $biodata)
+                            <td class="col-md-6">{{ $biodata->education->alamat_sekolah }}</td>
+                            @endforeach
                         </tr>
                         <tr>
                             <td width="30%">Kota Asal Sekolah</td>
                             <td width="3%">:</td>
-                            <td class="col-md-6"></td>
+                            @foreach ($biodatas as $biodata)
+                            <td class="col-md-6">{{ $biodata->education->kota_sekolah }}</td>
+                            @endforeach
                         </tr>
                         <tr>
                             <td width="30%">Jurusan</td>
                             <td width="3%">:</td>
-                            <td class="col-md-6"></td>
+                            @foreach ($biodatas as $biodata)
+                            <td class="col-md-6">{{ $biodata->education->jurusan_sekolah }}</td>
+                            @endforeach
                         </tr>
                         <tr>
                             <td width="30%">Tahun Lulus</td>
                             <td width="3%">:</td>
                             @foreach ($biodatas as $biodata)
-                            <td class="col-md-6">{{ $biodata->tahunlulus }}</td>
+                            <td class="col-md-6">{{ $biodata->education->tahunlulus }}</td>
                             @endforeach
                         </tr>
                     </tbody>

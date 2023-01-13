@@ -22,9 +22,12 @@
   <body>
     
 @include('dashboard.layouts.header')
+<div class="d-flex" id="wrapper">
+  @include('dashboard.layouts.sidebar')
     <div class="container">
       @yield('container')
  
+</div>
 </div>
 <footer class="ft rounded-bottom colfot">
   @include('dashboard.layouts.footer')

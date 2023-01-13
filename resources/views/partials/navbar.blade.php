@@ -15,13 +15,11 @@
         </li>
       </ul>
     </div>
-  </div>
-
     <ul class="navbar-nav ml-auto">    
       @auth
             <form action="/logout" method="post">
               @csrf
-                <button type="submit" class="btn fk"><i class="bi bi-box-arrow-right"></i>Keluar</button>
+                <button type="submit" class="btn fk">Keluar</button>
             </form>            
         </ul>
       </li>       
@@ -31,6 +29,7 @@
       </li>
       @endauth
     </ul>  
+  </div>
       </div>
     </div>
   </nav>

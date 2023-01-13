@@ -102,7 +102,7 @@
             <div class="col-sm-5">
                 <div class="form-group">
                     <label>Pas Foto :<label class="bintang">*</label></label>
-                    <input type="file" id="image" name="image">
+                    <input type="file" id="image" name="image" class="form-control form-control-lg">
                 </div>
             </div>
             <div class="alert">

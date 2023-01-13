@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('biodatas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
+            $table->foreignId('education_id');
             $table->string('nik')->unique();
             $table->string('nisn');
             $table->string('nama');
@@ -35,15 +36,6 @@ return new class extends Migration
             $table->string('phone');
             $table->string('email');
             $table->string('image')->nullable();
-            $table->string('pendidikan');
-            $table->string('nama_sekolah');
-            $table->string('nilai_raport');
-            $table->string('tahunlulus');           
-            $table->string('alamat_sekolah');
-            $table->string('kota_sekolah');
-            $table->string('jurusan_sekolah');
-            $table->string('jurusan1');
-            $table->string('jurusan2');
             $table->timestamps();
         });
     }

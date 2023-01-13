@@ -25,8 +25,8 @@
 						<td>{{ $biodata->nama }}</td>
 						<td>2</td>
 						<td>Mandiri</td>
-						<td>{{ $biodata->jurusan1 }}</td>
-						<td>{{ $biodata->jurusan2 }}</td>
+						<td>{{ $biodata->education->jurusan1 }}</td>
+						<td>{{ $biodata->education->jurusan2 }}</td>
 						<td><a href="img/ttd.png" target="_blank">Lihat</a></td>
 						<td>Sudah Divalidasi</td>
 						<td><a class="btn btn-primary" href="/kartu_ujian/cetak_pdf" role="button">Print</a> 

@@ -5,7 +5,7 @@
       @auth
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Welcome Back, {{ auth()->user()->namadepan }}
+          Selamat Datang, {{ auth()->user()->namadepan }}
         </a>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-sidebar-inset-reverse"></i>Beranda</a></li>
